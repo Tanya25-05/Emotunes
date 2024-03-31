@@ -6,15 +6,15 @@ import Navbar from "../../navbar/Navbar";
 import VideoRecorder from "./VideoRecord";
 
 const Home = () => {
-  // const webcamRef = React.useRef(null);
-  // const [imageSrc, setImageSrc] = useState(null);
-  // const [musicRecommendations, setMusicRecommendations] = useState([]);
+  const webcamRef = React.useRef(null);
+  const [imageSrc, setImageSrc] = useState(null);
+  const [musicRecommendations, setMusicRecommendations] = useState([]);
 
-  // const capture = React.useCallback(() => {
-  //   const imageSrc = webcamRef.current.getScreenshot();
-  //   setImageSrc(imageSrc);
-  //   fetchMusicRecommendations(imageSrc);
-  // }, [webcamRef]);
+  const capture = React.useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImageSrc(imageSrc);
+    fetchMusicRecommendations(imageSrc);
+  }, [webcamRef]);
 
   const fetchMusicRecommendations = async (imageSrc) => {
     // Call your music recommendation API here
