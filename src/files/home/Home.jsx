@@ -4,7 +4,7 @@ import Webcam from "react-webcam";
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
 import VideoRecorder from "./VideoRecord";
-import { data } from "../data";
+import { data } from "../data/data";
 import MusicPlayer from "./MusicPlayer";
 const Home = () => {
   const webcamRef = React.useRef(null);

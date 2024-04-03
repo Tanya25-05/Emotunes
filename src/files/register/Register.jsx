@@ -30,10 +30,10 @@ export default function Register() {
               type="email"
               placeholder="Email Address"
               ref={emailRef}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300  focus:outline-none focus:border-blue-500"
             />
             <button
-              className="bg-indigo-500 text-white py-2 px-4  rounded-md hover:blue-900 focus:outline-none"
+              className="bg-indigo-500 inline-block text-xs text-white py-2 px-4 hover:blue-900 focus:outline-none"
               onClick={handleStart}
             >
               Get Started
@@ -47,12 +47,9 @@ export default function Register() {
               ref={passwordRef}
               className="w-full px-4 py-2 border border-gray-300  focus:outline-none focus:border-indigo-500 "
             />
-            <button
-              className="bg-indigo-500 text-white py-2 px-4  hover:bg-indigo-600 focus:outline-none"
-              onClick={handleFinish}
-            >
-            <Link to="/home">Start</Link>
-            </button>
+            <Link to="/home" className="bg-indigo-500 inline-block text-white py-2 px-4  hover:bg-indigo-600 focus:outline-none">
+              Start
+            </Link>
           </form>
         )}
       </div>
