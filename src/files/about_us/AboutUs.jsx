@@ -1,26 +1,33 @@
 import React from 'react';
-import { aboutUs } from "../../assets/aboutUs.png"
+import pic from "./aboutUs.png";
+import Navbar from "../navbar/Navbar"; 
+
 export const AboutUs = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <div className='flex flex-col md:flex-row'>
-        {/* Text section */}
-        <div className='md:w-1/2'>
-          <p className="text-bold text-white">About Us</p>
+    <div className='flex flex-col h-screen'>
+      {/* Navbar component */}
+      <Navbar />
+      
+      {/* Content */}
+      <div className='flex flex-col md:flex-row flex-1 justify-center items-center bg-black'>
+        <div className='md:w-1/2 mx-8'>
+          <p className="font-bold text-2xl md:text-4xl text-white mb-4">About Us</p>
           <div>
-            <p>
-              Lorem epsum
+            <p className="text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat nulla nec metus ullamcorper, at ullamcorper nisl vestibulum. Proin efficitur arcu id ligula pharetra volutpat. Nullam tristique, nisi in egestas fringilla, lorem turpis facilisis magna, non eleifend odio metus et mauris. Donec auctor, eros in varius luctus, ante enim fermentum felis, vitae suscipit libero risus in libero.
             </p>
           </div>
         </div>
-        {/* Image section */}
-        <div className='md:w-1/2'>
-          <img src={aboutUs} alt="About Us" />
+        <div className='md:w-1/2 md:mx-4'>
+          <img src={pic} alt="About Us Illustration" className="md:max-w-full h-auto" /> 
         </div>
       </div>
     </div>
   );
 }
+
+export default AboutUs;
+
 
 
 

@@ -7,7 +7,7 @@ import Login from "./files/login/Login"
 import Register from './files/register/Register'
 import Home from './files/home/Home'
 import Navbar from './files/navbar/Navbar';
-// import { AboutUs } from "./files/about_us/AboutUs";
+import { AboutUs } from "./files/about_us/AboutUs";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
    <Route path ='/login' element ={ <Login/>} />
    <Route path = '/register' element ={<Register/> } />
    <Route path= '/home' element={<Home/>}/>
-   {/* <Route path= '/about' element={<Home/>}/> */}
+   <Route path= '/about' element={<AboutUs/>}/>
    {/* <Route path= '' */}
    </Routes>
   </Router> 
