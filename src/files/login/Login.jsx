@@ -76,9 +76,8 @@ export default function Login() {
                 type="email"
                 placeholder="Email Address or Phone number"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-white"
-                id="username"
                 name="username"
-                value={input.username}
+                value={inputs.username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
@@ -87,8 +86,8 @@ export default function Login() {
                 type="password"
                 placeholder="Enter your password"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-white"
-                id="password"
-                value={password}
+                name="password"
+                value={inputs.password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
