@@ -18,6 +18,7 @@ export default function Login() {
 
     const sendRequest = async () => {
       // add your api endpoint for login 
+      console.log(inputs)
       try
        { const response = await axios
        .post(`https://localhost/api/users/login`,{
@@ -32,30 +33,32 @@ export default function Login() {
     };
     const [password,setPassword] = useState('');
     const history= useHistory();
+
     const handleSubmit = async (e) => {
       e.preventDefault();
       console.log(inputs);
+      sendRequest()
     // api calling
-    try {
-      const response = await fetch('/api/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+    // try {
+    //   const response = await fetch('/api/signin', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({ username, password }),
+    //   });
 
-      if(response.ok){
-        history.push('/home')
-      }
-      else
-      {
-        console.log('Login failed invalid username or password');
-      }
-    } 
-    catch(error) {
-      console.error('Error :',error)
-    }
+    //   if(response.ok){
+    //     history.push('/home')
+    //   }
+    //   else
+    //   {
+    //     console.log('Login failed invalid username or password');
+    //   }
+    // } 
+    // catch(error) {
+    //   console.error('Error :',error)
+    // }
   };
   return (
     
