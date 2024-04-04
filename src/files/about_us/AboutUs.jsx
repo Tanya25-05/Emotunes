@@ -10,7 +10,7 @@ export const AboutUs = () => {
       
       {/* Content */}
       <div className='flex flex-col md:flex-row flex-1 justify-center items-center bg-black'>
-        <div className='md:w-1/2 mx-8'>
+        <div className='md:w-1/2 mx-8 ml-8'>
           <p className="font-bold text-2xl md:text-4xl text-white mb-4">About Us</p>
           <div>
             <p className="text-white">

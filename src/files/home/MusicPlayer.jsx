@@ -1,6 +1,6 @@
 import React from "react";
 
-const MusicCard = ({ ...props }) => {
+const MusicPlayer = ({ ...props }) => {
   const { img, musicName, genre, artist } = props;
 
   return (
@@ -172,4 +172,4 @@ const MusicCard = ({ ...props }) => {
   );
 };
 
-export default MusicCard;
+export default MusicPlayer;

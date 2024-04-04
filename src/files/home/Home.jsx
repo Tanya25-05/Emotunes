@@ -30,10 +30,10 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gray-900 ">
+    <div className="bg-black ">
       <Navbar />
-      <div className="flex flex-col items-center justify-center  bg-gray-900 text-white">
-        <h1 className="text-4xl font-bold mb-8">
+      <div className="flex flex-col items-center justify-center  bg-black text-white">
+        <h1 className="text-4xl font-bold my-10">
           Camera Music Recommendations
         </h1>
         <div>

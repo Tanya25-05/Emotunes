@@ -1,7 +1,37 @@
 import React from 'react';
-import Link from 'react-dom'
+import {Link,useHistory} from 'react-dom'
+import useState from 'react'
 export default function Login() {
+  const [username,setUsername] = useState('');
+    const [password,setPassword] = useState('');
+    const history= useHistory();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+    // Fetch request to your backend for user authentication
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if(response.ok){
+        history.push('/home')
+      }
+      else
+      {
+        console.log('Login failed invalid username or password');
+      }
+    } 
+    catch(error) {
+      console.error('Error :',error)
+    }
+  };
   return (
+    
     <div className="bg-black h-screen w-screen">
     <div className="flex justify-center items-center h-screen ">
       <div className="max-w-md w-full px-6 py-8">
@@ -10,13 +40,15 @@ export default function Login() {
         </div>
         <div className="bg-gray-800 rounded-lg shadow-lg p-8">
           <h2 className="text-2xl mb-4 font-semibold text-white text-center">Sign In</h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <input
                 type="email"
                 placeholder="Email Address or Phone number"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-white"
                 id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div>
@@ -25,6 +57,8 @@ export default function Login() {
                 placeholder="Enter your password"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-white"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <button
@@ -37,7 +71,7 @@ export default function Login() {
           <div className="mt-4 text-center">
             <span className="text-gray-400">New to EmoTunes? </span>
             <b className="text-blue-600 cursor-pointer">
-              Sign up Now!</b>
+            <Link to="/register" >Sign up Now!</Link></b>
           </div>
           <div className="mt-2 text-sm text-gray-400 text-center">
             This page is protected by blah blah

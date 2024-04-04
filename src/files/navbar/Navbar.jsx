@@ -15,7 +15,7 @@ export const navLinks = [
     title: "login",
   },
   {
-    id: "About Us",
+    id: "about",
     title: "about",
   },
   {
@@ -29,10 +29,10 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="bg-gray-900 text-white">
-      <nav className="w-full flex py-6 justify-between  text-white items-center navbar max-w-7xl mx-auto">
+    <header className="bg-black text-white">
+      <nav className="w-xl/2 flex py-6 justify-between  text-white items-center navbar mx-10">
         {/* Logo */}
-        <h1 className="text-3xl text-white">Logo</h1>
+        <h1 className="text-3xl text-white font-serif"><Link to="/home">Emotunes</Link></h1>
 
         {/* Desktop Navigation */}
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -52,7 +52,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Navigation */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden flex flex-1 justify-end items-center bg-black">
           <img
             src={toggle ? CloseIcon : MenuIcon}
             alt="menu"
@@ -64,7 +64,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+            } p-6 bg-black absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col">
               {navLinks.map((nav, index) => (
