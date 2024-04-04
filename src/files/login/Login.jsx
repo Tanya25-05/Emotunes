@@ -1,16 +1,43 @@
 import React from 'react';
 import {Link,useHistory} from 'react-dom'
 import useState from 'react'
+import axios from 'axios';
 export default function Login() {
-  const [username,setUsername] = useState('');
+    const [inputs,setInputs] = useState({
+      username:"",
+      password:"",
+      // email:""
+    });
+
+    const handleChange = (e) =>{
+      setInputs((previousState) => ({
+        ...previousState,
+        [e.target.name]: e.target.value,
+      }));
+    };
+
+    const sendRequest = async () => {
+      // add your api endpoint for login 
+      try
+       { const response = await axios
+       .post(`https://localhost/api/users/login`,{
+        username:inputs.username,
+        password:inputs.password,
+       })}
+       
+       catch(error) {
+        console.error(error);
+       }
+
+    };
     const [password,setPassword] = useState('');
     const history= useHistory();
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
-    // Fetch request to your backend for user authentication
+      console.log(inputs);
+    // api calling
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +74,8 @@ export default function Login() {
                 placeholder="Email Address or Phone number"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 text-white"
                 id="username"
-                value={username}
+                name="username"
+                value={input.username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
