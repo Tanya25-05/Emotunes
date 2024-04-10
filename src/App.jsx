@@ -8,7 +8,7 @@ import Register from './files/register/Register'
 import Home from './files/home/Home'
 import Navbar from './files/navbar/Navbar';
 import { AboutUs } from "./files/about_us/AboutUs";
-
+// import {Contact } from "./files/contact_us/ContactUs"
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
    <Route path = '/register' element ={<Register/> } />
    <Route path= '/home' element={<Home/>}/>
    <Route path= '/about' element={<AboutUs/>}/>
+   {/* <Route path= '/contact_us' element={<Contact/>}/> */}
    {/* <Route path= '' */}
    </Routes>
   </Router> 

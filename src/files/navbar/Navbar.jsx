@@ -11,12 +11,12 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "login",
-    title: "login",
+    id: "contact_us",
+    title: "Contact Us",
   },
   {
     id: "about",
-    title: "about",
+    title: "About Us",
   },
   {
     id: "register",
